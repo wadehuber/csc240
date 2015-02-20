@@ -1,26 +1,30 @@
+/* example of using function pointers */
 #include <stdio.h>
 
 typedef struct {
-  void * data;
-  void (* modify)(void * d);
+  void * data;                 
+  void (* modify)(void * d);  /* pointer to a function that returns void 
+                               *   the parameter is a void pointer */
 } funptr;
 
 void myFunc (void * d) {
-	int * x = (int *) d;
-	*x = *x * 2;
-	d = (void *) x;
+	int * x = (int *) d;  /* casts the parameter pointer to an int pointer */
+	*x = *x * 2;          /* note that x is dereferenced */
 }
 
 main() {
 
   int a = 8;
   funptr k;
-  funptr k;
 
-  k.data = (void *) &a;
-  k.modify = (*myFunc);
+  k.data = (void *) &a;   /* we have to cast &a to void to avoid warning */
+  k.modify = (*myFunc);   /* sets the function pointer in k to myFunc */
+
   printf("Value = %d\n", *((int*) k.data));
+
+  /* call the function stored in k */
   (*k.modify)((void *) k.data);
+
   printf("Value = %d\n", *((int*) k.data));
 }
 
