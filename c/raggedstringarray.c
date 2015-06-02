@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-main() {
+int main() {
 	int ii;
 
 	/* 2D array - Array of 5 character arrays of length 15 */
@@ -40,4 +40,6 @@ main() {
 
 	/* Print sizes */
 	printf ("\nSizes: s1=%d, s2=%d\n", s1size, s2size);
+	
+	return 0;
 }

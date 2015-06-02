@@ -1,5 +1,5 @@
 #include <stdio.h>
-main()
+int main()
 {
 	const int i = 5;
 	int *j;		

@@ -21,5 +21,5 @@ int main ()
    printf ("%p, p=%c\n",&p, *p);
    printf ("\n=======\n");
    
-
+   return 0;
 }

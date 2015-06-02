@@ -30,7 +30,8 @@ int main() {
     /* printing pointer operations */
     printf("%c, %c\n", *(&c), c);
     printf("%p, %p, %c\n", *(&p), p, **(&p));
-
+    
+    return 0;
 }
 
 

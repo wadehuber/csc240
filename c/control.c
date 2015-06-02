@@ -32,7 +32,7 @@ int main (void)
 	  printf("You entered a four\n");
 	  break;
 	default : 
-	  printf("You entered a number bigger than 4\n");
+	  printf("You entered a number greater than 4 or less than 1\n");
   }
  
   printf ("\nWhile loop : \n");
