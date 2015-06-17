@@ -28,11 +28,22 @@ struct loosestruct{
   char char4;
 };
 
+/* bitfield example */
+struct bitf {
+    int a : 10;  /* 10 bit int */
+    int b : 5;   /* 5 bit int */
+    int c : 1;   /* 1 bit int */
+};
+
 int main() {
     struct tightstruct tstruct = {0,1,2,'A','B','C','D'};
     struct loosestruct lstruct = {'A',0,'B',1,'C',2,'D'};
 
+    struct bitf bitfield = {7, 2, 1};
+
     printf ("Size of tightstruct = %d\n", sizeof(struct tightstruct));
     printf ("Size of loosestruct = %d\n", sizeof(struct loosestruct));
+    printf ("Size of bitfield = %d\n", sizeof(struct bitf));
+
     return 0;
 }
