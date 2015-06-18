@@ -10,7 +10,7 @@ int main() {
   if (*c) {
     printf("Little endian\n");
   }
-  /* C will be 1 if big endian (high order byte first */
+  /* C will be 0 if big endian (high order byte first */
   else {
     printf("Big endian\n");
   }
