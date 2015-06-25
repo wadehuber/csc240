@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-main() {
+int main() {
 	int ii;
-	char s[5];
 	char s1[ ] = "Hello";
 	char s2[5] = "World";
 
@@ -22,4 +21,6 @@ main() {
 	printf ("\nSizes: s1=%d, s2=%d\n", sizeof(s1), sizeof(s2));
 
 	printf("End of string character (s1): %d\n", s1[sizeof(s1)-1]);
+	
+	return 0;
 }

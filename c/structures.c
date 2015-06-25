@@ -16,7 +16,7 @@ void init_structure(mystruct_t *, char *, int); /* no param names required */
 
 int main() {
     mystruct_t struct1 = {"Alice", 10};         /* initializing declaration */
-    mystruct_t * struct2;
+    mystruct_t * struct2 = NULL;
 
     /* malloc allocates memory from the heap */
     struct2 = (mystruct_t *) malloc(sizeof(mystruct_t));
@@ -31,6 +31,8 @@ int main() {
     /* now change values for struct1 & print */
     init_structure(&struct1, "Sue", 30);
     print_structure(struct1);
+    
+    return 0;
 }
 
 /* function definitons.  Note how the structure parameter is accessed differently 

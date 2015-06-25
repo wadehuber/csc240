@@ -49,6 +49,8 @@ int main(void)
      *   get decrypted */
 	printf("messages after decryption:\n");
 	printf("  %s\n  %s\n", str1, str2);
+	
+	return 0;
 }
 	
 
