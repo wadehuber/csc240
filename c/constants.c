@@ -1,16 +1,36 @@
+/* Example of constants in C */
 #include <stdio.h>
+
+/* Preprocessor constant - no memory allocated */
+#define NUM 5
+
+typedef enum {TEN=10, TWENTY=20, THIRTY=30} values_t;
+typedef enum {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY} classdays_t;
+
 main()
 {
-	const int i = 5;
+	const int const_var = NUM; /* constant variable - memory allocated */
 	int *j;		
-	/* i = i + 2; illegal since i is a constant */
-	j = &i;	
-	printf("i = %d\n", i);	 /* i = 5 */
-	printf("j = %p (%d)\n", j, *j);	 /* i = 5 */
+    values_t vals = TWENTY;
+    classdays_t day = MONDAY;
+    
+    printf("vals = %d (TEN), day=%d (MONDAY)\n", vals, day);
+    vals = TWENTY;
+    day = TUESDAY;
+    printf("vals = %d (TWENTY), day=%d (TUESDAY)\n\n", vals, day);
 
+	/* Next line is illegal since const_var is a constant 
+	const_var = const_var + 2; 
+    */
+	j = &const_var;	
+	printf("const_var = %d\n", const_var);	 /* const_var = 5 */
+	printf("j = %p (%d)\n", j, *j);	 /* const_var = 5 */
+
+    /* You can change a constant variable through a pointer, so be
+     *   be careful!  (This doesn't work with a preprocessor constant */
 	*j = *j + 2;	 
-	printf("i = %d\n", i);   /* i = 7? */
-	printf("j = %p (%d)\n", j, *j);	 /* i = 7? */
+	printf("const_var = %d\n", const_var);   /* const_var = 7? */
+	printf("j = %p (%d)\n", j, *j);	 /* const_var = 7? */
 
 	return 0;
 }
