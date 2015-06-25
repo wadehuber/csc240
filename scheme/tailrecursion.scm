@@ -28,3 +28,25 @@
 (factorial-tail 4)
 (factorial-tail 10)
 (factorial-tail 100)
+
+
+; Tail-recursive Fibonacci implementation
+(define fib
+  (lambda (x)
+    (if (<= x 0)
+        0
+        (fib-helper x 0 1))))
+
+(define fib-helper
+  (lambda (index f2 f1)
+    (if (<= index 0)
+        f2
+        (fib-helper (- index 1) f1 (+ f1 f2)))))
+
+(newline)
+(display "fibonacci-tail - values 1, 4, 10, 100")(newline)
+(fib 1)
+(fib 4)
+(fib 10)
+(fib 100)
+(fib 1000)
