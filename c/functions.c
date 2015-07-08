@@ -13,6 +13,8 @@ int main() {
     printf("x = %d,  y = %d\n", x, y);
     printf("x = %d, increment1(x)=%d\n", x, increment1(x));
     printf("x = %d,  y = %d\n", x, y);
+    
+    return 0;
 }
 
 

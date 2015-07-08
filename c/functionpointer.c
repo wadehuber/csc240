@@ -12,7 +12,7 @@ void myFunc (void * d) {
 	*x = *x * 2;          /* note that x is dereferenced */
 }
 
-main() {
+int main() {
 
   int a = 8;
   funptr k;
@@ -23,9 +23,11 @@ main() {
   printf("Value = %d\n", *((int*) k.data));
 
   /* call the function stored in k */
-  (*k.modify)((void *) k.data);
+  (*k.modify)(k.data);
 
   printf("Value = %d\n", *((int*) k.data));
+  
+  return 0;
 }
 
 

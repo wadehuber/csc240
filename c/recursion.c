@@ -3,12 +3,15 @@
 
 int fact1(int n);
 int fact2(int n);
-
+int fact2tail(int n, int res);
+int fact3(int n);
 
 int main () {
    printf("fact1: 10!=%d\n", fact1(10));
    printf("fact2: 10!=%d\n", fact2(10));
    printf("fact3: 10!=%d\n", fact3(10));
+   
+   return 0;
 }
 
 /* compute the factorial of n using recursion */
@@ -47,6 +50,3 @@ int fact3(int n) {
     }
     return res;
 }
-
-
-

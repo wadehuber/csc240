@@ -7,7 +7,7 @@
 typedef enum {TEN=10, TWENTY=20, THIRTY=30} values_t;
 typedef enum {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY} classdays_t;
 
-main()
+int main()
 {
 	const int const_var = NUM; /* constant variable - memory allocated */
 	int *j;		
