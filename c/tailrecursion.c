@@ -1,22 +1,38 @@
 /* examples of recursion in c */
 #include<stdio.h>
 
+#ifndef NUM
+#define NUM 20
+#endif
+
+int fib1counter[NUM];
+int fib2counter[NUM];
+
 int fib1(int n);
 int fib2(int n);
 int fib2tail_helper(int n, int f2, int f1);
 
+
 int main () {
     int ii;
-    printf("fib1: \n  ");
-    for (ii=0;ii<=10;ii++) 
-        printf("%d ", fib1(ii));
-    printf("\nfib2: \n  ");
-    for (ii=0;ii<=10;ii++) 
-        printf("%d ", fib2(ii));
+    int num;
+
+    for (ii=0;ii<=NUM;ii++) {
+      fib1counter[ii]=0;
+      fib2counter[ii]=0;
+    }
+
+    num=NUM;
+    printf("fib1(%d)=%d,   fib2(%d)=%d\n", num, fib1(num), num, fib2(num));
+    for (ii=0;ii<=NUM;ii++) {
+      printf("fib1counter[%d] = %d,   fib2counter[%d] = %d\n", 
+              ii, fib1counter[ii], ii, fib2counter[ii]);
+    }
 }
 
 /* compute the nth fibonacci number using naive recursion */
 int fib1(int n) {
+    fib1counter[n]++;
     if (n<=0) 
         return 0;
     else if (n<=2) 
@@ -38,6 +54,7 @@ int fib2tail(int n, int res) {
 }
 
 int fib2tail_helper(int n, int f2, int f1) {
+    fib2counter[n]++;
     if (n <= 0)
         return f2;
     else
