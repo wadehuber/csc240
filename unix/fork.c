@@ -10,6 +10,7 @@ int main(int argc, char*argv[]) {
   int ii;
 
   printf("Before fork: n = %d\n", n);
+  sleep(5);
   pid = fork();
 
   if(pid == 0) {

@@ -3,6 +3,8 @@
 #include <pthread.h>
 #include <unistd.h> 
 
+/* gcc pthread.c -lpthread */
+
 void *do_stuff(void *x) {
     int ii;
     for (ii=0;ii<10;ii++) {
@@ -34,7 +36,7 @@ int main() {
       return 1;
   }
 
-  for (ii=0;ii<10;ii++) {
+  for (ii=0;ii<5;ii++) {
       printf("\t\ty=%d\n", y++);
       fflush(stdout);
       sleep(1);
@@ -46,8 +48,8 @@ int main() {
   }
 
   printf("After:\n");
-  printf("x=%d at %p\n)\n",x, &x);
-  printf("y=%d at %p\n)\n",y, &y);
+  printf("x=%d at %p\n",x, &x);
+  printf("y=%d at %p\n",y, &y);
 
   return(0);
 }
