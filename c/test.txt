@@ -1,0 +1,5 @@
+Part 1 - Introduction
+Part 2 - Imperative Programming - C
+Part 3 - Object-oriented Programming - C++
+Part 4 - Functional Programming - Scheme
+Part 5 - Logic Programming - Prolog
