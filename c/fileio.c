@@ -9,9 +9,9 @@ int main ()
 
   fp = fopen("test.txt", "r");  /* modes: "r", "w", "a" */
 
-  while ( fgets(buffer, BUFFER+1, fp))  {
-    if (strncmp(buffer,  "hello\n", BUFFER) == 0)
-      printf("Hello yourself\n");
+  while ( fgets(buffer, BUFFER, fp))  {
+    if (strncmp(buffer,  "Part 2", 6) == 0)
+      printf("C is my favorite!\n");
     else
       fputs(buffer,stdout);  /* print to stdout */
   }
