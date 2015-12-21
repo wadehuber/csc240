@@ -35,7 +35,8 @@ int main() {
 	int s2size = 0;
 	for (ii = 0; ii < 5; ii++) {
 		printf("   %s\n", s2[ ii ]); 
-		s2size += sizeof(s2[ii]);
+        /* Add size of pointer + length of string pointed to */
+		s2size += sizeof(s2[ii]) + strnlen(s2[ii], 20);
 	}
 
 	/* Print sizes */
