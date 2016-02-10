@@ -1,6 +1,7 @@
 /* examples of recursion in c */
 #include<stdio.h>
 
+/* Compile with -DNUM=XX to calc fib(XX) */
 #ifndef NUM
 #define NUM 20
 #endif
@@ -10,6 +11,7 @@ int fib2counter[NUM];
 
 int fib1(int n);
 int fib2(int n);
+int fib2tail(int, int);
 int fib2tail_helper(int n, int f2, int f1);
 
 
@@ -28,6 +30,7 @@ int main () {
       printf("fib1counter[%d] = %d,   fib2counter[%d] = %d\n", 
               ii, fib1counter[ii], ii, fib2counter[ii]);
     }
+   return 0;
 }
 
 /* compute the nth fibonacci number using naive recursion */
@@ -55,9 +58,10 @@ int fib2tail(int n, int res) {
 
 int fib2tail_helper(int n, int f2, int f1) {
     fib2counter[n]++;
-    if (n <= 0)
-        return f2;
+    if (n <= 1)
+        return f1;
     else
         return (fib2tail_helper(n-1, f1, f1+f2));
+
 }
 
