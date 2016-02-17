@@ -4,9 +4,10 @@
 #define _BASICLIST_H_
 
 typedef struct node {
-  void * data;
-  struct node * next;
+  void * data;         /* pointer to data */
+  struct node * next;  /* pointer to next next node */
 } node_t;
 
-int list_add(void * data, node_t ** list);
+int list_add(node_t ** list, void * data);
+
 #endif
