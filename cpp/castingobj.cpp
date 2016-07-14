@@ -1,8 +1,7 @@
-// Example of examinging object as a string and char
+// Example of examining object as a string and char
 #include<iostream>
 #include<string.h>
 #include<stdlib.h>
-#include<stdio.h>
 using namespace std;
 
 #define STRLEN 10
@@ -35,20 +34,28 @@ void MyClass::print () {
     cout << "print(): My Class " << num << ", " << str << endl;
 }
 
+// Returns ' ' if char not printable
+char outputChar(char c) {
+    if ((c <= ' ') || (c > '~'))
+        c = ' ';
+    return c;
+}
+
 void memdumper(void * start, int len) {
     char * ptr = (char *) start;
     int ii;
+    char output[80];
 
     for (ii=0;ii<len;ii++) {
-       printf("%d (%c)\n", *(ptr+ii), *(ptr+ii));
+       sprintf(output, "%d (%c)\n", *(ptr+ii), outputChar(*(ptr+ii)));
+       cout << "     " << output;
     }
-
 }
 
 int main() {
     MyClass m(3,"Hello");
     memdumper ((void *) &m, 24);
-    cout << "Object as string: " << (char *) &m << endl;
+    cout << endl << "Object as string: " << (char *) &m << endl;
     m.print();
 }
 
