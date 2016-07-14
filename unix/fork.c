@@ -15,7 +15,7 @@ int main(int argc, char*argv[]) {
 
   if(pid == 0) {
     n = 1;
-    printf("Child process.  n=%d, PID=%d\n",n, pid);
+    printf("Child process.  n=%d, returned PID=%d\n",n, pid);
     for (ii=0;ii<10;ii++) {
        printf ("\t\t\t\t\tC\n");
        sleep(1);
@@ -23,7 +23,7 @@ int main(int argc, char*argv[]) {
   }
   else {
     n = 2;
-    printf("Parent process.  n=%d, PID=%d\n",n, pid);
+    printf("Parent process.  n=%d, Child PID=%d\n",n, pid);
     for (ii=0;ii<5;ii++) {
        printf ("\t\t\t\t\t\tP\n");
        sleep(1);
