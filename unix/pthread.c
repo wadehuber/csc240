@@ -5,7 +5,7 @@
 
 /* gcc pthread.c -lpthread */
 
-void *do_stuff(void *x) {
+void *count_to_ten(void *x) {
     int ii;
     for (ii=0;ii<10;ii++) {
         printf("\t\t\tx=%d\n", (*(int *)x)++);
@@ -25,13 +25,13 @@ int main() {
   int ii;
   int rc;
 
+  pthread_t new_thread;
+
   printf("Before:\n");
   printf("x=%d at %p\n\n",x, &x);
   printf("y=%d at %p\n\n",y, &y);
 
-  pthread_t new_thread;
-
-  if(rc = pthread_create(&new_thread, NULL, do_stuff, &x)) {
+  if (rc = pthread_create(&new_thread, NULL, count_to_ten, &x)) {
       fprintf(stderr, "ERROR code %d calling pthread_create\n",rc);
       return 1;
   }
@@ -42,7 +42,7 @@ int main() {
       sleep(1);
   }
 
-  if(pthread_join(new_thread, NULL)) {
+  if (pthread_join(new_thread, NULL)) {
       fprintf(stderr, "Error joining pthread\n");
       return 1;
   }

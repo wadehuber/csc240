@@ -2,6 +2,9 @@
 #include<thread>
 #include<mutex>
 
+// compile with:
+//  g++ threads.cpp --std=c++11 -pthread
+
 std::mutex m;
 
 // This funtion counts to 10 with 1 second delay between numbers
