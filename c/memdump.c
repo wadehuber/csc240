@@ -12,7 +12,7 @@ struct example {
 
 /* dump len bytes of memory starting at start */
 void memdump (char * start, int len) {
-    int ii;
+    int ii = 0;
     char * ptr = start;
 
     while (ii<len) {

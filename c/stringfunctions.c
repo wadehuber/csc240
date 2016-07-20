@@ -93,5 +93,7 @@ int main () {
     printf("  After: str2 : %s\n", str2);
     printf("  AFter: ptr1 : %s\n", ptr1);
 
+    free(ptr1);
+    free(ptr2);
     return 0;
 }

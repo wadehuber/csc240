@@ -59,8 +59,6 @@ int main() {
   // a1->speak();
   // a1->name();
 
-  a1 = new Dog;
-
   // Initial set of calls use Dog object
   cout << endl << "Dog object" << endl;
   d1.speak();

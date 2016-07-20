@@ -26,5 +26,6 @@ int main() {
 
   s3[4] = '\0';
   printf("s3: %s size=%d\n", s3, sizeof(s3));
+  free(s6);
   return 0;
 }

@@ -3,7 +3,7 @@
 
 /* Compile with -DNUM=XX to calc fib(XX) */
 #ifndef NUM
-#define NUM 20
+#define NUM 21
 #endif
 
 int fib1counter[NUM];
@@ -19,14 +19,14 @@ int main () {
     int ii;
     int num;
 
-    for (ii=0;ii<=NUM;ii++) {
+    for (ii=0;ii<NUM;ii++) {
       fib1counter[ii]=0;
       fib2counter[ii]=0;
     }
 
-    num=NUM;
+    num=NUM-1;
     printf("fib1(%d)=%d,   fib2(%d)=%d\n", num, fib1(num), num, fib2(num));
-    for (ii=0;ii<=NUM;ii++) {
+    for (ii=0;ii<NUM;ii++) {
       printf("fib1counter[%d] = %d,   fib2counter[%d] = %d\n", 
               ii, fib1counter[ii], ii, fib2counter[ii]);
     }

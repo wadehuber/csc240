@@ -15,7 +15,7 @@ int main() {
     printf("\n========\n");
 
     /* after incrementing p  */
-    *p ++;  /* dereferencing happens before p is incremented */
+    *p++;  /* dereferencing happens before p is incremented */
     printf("c: %10c, %10d, %p\n", c, c, &c);   
     printf("p: %10p, %10p, %d\n", p, &p, *p);   
     printf("\n========\n");

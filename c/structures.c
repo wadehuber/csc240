@@ -32,6 +32,7 @@ int main() {
     init_structure(&struct1, "Sue", 30);
     print_structure(struct1);
     
+    free(struct2);
     return 0;
 }
 
