@@ -2,9 +2,11 @@
 ; Using list vs quote to create a list.
 ; Try uncommenting out the commeted lines to see what happens
 
+(define num 123)
+
 ;(define q0 (list (+ 1 'Hello)))
-(define q1 (list + 1 'Hello))
-(define q2 (quote (+ 1 Hello)))
+(define q1 (list + 1 'Hello num))
+(define q2 (quote (+ 1 Hello num)))
 
 (write "Using list:")(newline)
 q1
