@@ -1,10 +1,12 @@
 #include<stdio.h>
 
+/* Create type "struct myStruct" */
 struct myStruct {
   int num;
   char name[10];
 };
 
+/* Create type "myStruct" */
 typedef struct {
   int count;
   float average;
