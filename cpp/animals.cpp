@@ -17,7 +17,6 @@ class Animal {
     void name () {
        cout << "Animal" << endl;
     }
-
 };
 
 // Dog does not override move()
@@ -29,6 +28,10 @@ class Dog : public Animal {
 
     void name () {
        cout << "Rover" << endl;
+    }
+
+    void fetch() {
+      cout << "Fetching! " << endl;
     }
 };
 
@@ -93,6 +96,15 @@ int main() {
   a1->move();   // Virtual method, so use method of type pointed to
   a1->name();   // Name is not virtual, so use method of calling type
 
+  cout << endl << "Dogs can fetch" << endl;
+  d1.fetch();
+  d2->fetch();
+  a1 = &d1;
+  /* // Animals have no fetch method, so the pointer doesn't know what
+     //   to point to.
+  a1->fetch();   
+  */
+  ( (Dog *) a1)->fetch();  // Cast the Animal pointer to a Dog pointer
 
   // Polymorphism example
   Animal *animals[3] = {&d1, &s1, a1};
