@@ -44,6 +44,5 @@ int main() {
         printf("%c", tolower(str[ii]));
     }
 
-
     return 0;
 }
