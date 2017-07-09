@@ -20,7 +20,7 @@ class myClass {
   ~myClass() {
     cout << "  Destructor: " << *a << endl;
     delete (a); 
-    a=NULL;
+    a=nullptr;
   }
 };
 
